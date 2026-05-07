@@ -10,12 +10,42 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PortalsRouteImport } from './routes/portals'
+import { Route as PatientRouteImport } from './routes/patient'
+import { Route as HospitalsRouteImport } from './routes/hospitals'
+import { Route as DoctorsSearchRouteImport } from './routes/doctors-search'
+import { Route as DoctorRouteImport } from './routes/doctor'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthPortalRouteImport } from './routes/auth.$portal'
 
 const PortalsRoute = PortalsRouteImport.update({
   id: '/portals',
   path: '/portals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PatientRoute = PatientRouteImport.update({
+  id: '/patient',
+  path: '/patient',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HospitalsRoute = HospitalsRouteImport.update({
+  id: '/hospitals',
+  path: '/hospitals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoctorsSearchRoute = DoctorsSearchRouteImport.update({
+  id: '/doctors-search',
+  path: '/doctors-search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoctorRoute = DoctorRouteImport.update({
+  id: '/doctor',
+  path: '/doctor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -31,30 +61,75 @@ const AuthPortalRoute = AuthPortalRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/doctor': typeof DoctorRoute
+  '/doctors-search': typeof DoctorsSearchRoute
+  '/hospitals': typeof HospitalsRoute
+  '/patient': typeof PatientRoute
   '/portals': typeof PortalsRoute
   '/auth/$portal': typeof AuthPortalRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/doctor': typeof DoctorRoute
+  '/doctors-search': typeof DoctorsSearchRoute
+  '/hospitals': typeof HospitalsRoute
+  '/patient': typeof PatientRoute
   '/portals': typeof PortalsRoute
   '/auth/$portal': typeof AuthPortalRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/doctor': typeof DoctorRoute
+  '/doctors-search': typeof DoctorsSearchRoute
+  '/hospitals': typeof HospitalsRoute
+  '/patient': typeof PatientRoute
   '/portals': typeof PortalsRoute
   '/auth/$portal': typeof AuthPortalRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/portals' | '/auth/$portal'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/doctor'
+    | '/doctors-search'
+    | '/hospitals'
+    | '/patient'
+    | '/portals'
+    | '/auth/$portal'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/portals' | '/auth/$portal'
-  id: '__root__' | '/' | '/portals' | '/auth/$portal'
+  to:
+    | '/'
+    | '/admin'
+    | '/doctor'
+    | '/doctors-search'
+    | '/hospitals'
+    | '/patient'
+    | '/portals'
+    | '/auth/$portal'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/doctor'
+    | '/doctors-search'
+    | '/hospitals'
+    | '/patient'
+    | '/portals'
+    | '/auth/$portal'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  DoctorRoute: typeof DoctorRoute
+  DoctorsSearchRoute: typeof DoctorsSearchRoute
+  HospitalsRoute: typeof HospitalsRoute
+  PatientRoute: typeof PatientRoute
   PortalsRoute: typeof PortalsRoute
   AuthPortalRoute: typeof AuthPortalRoute
 }
@@ -66,6 +141,41 @@ declare module '@tanstack/react-router' {
       path: '/portals'
       fullPath: '/portals'
       preLoaderRoute: typeof PortalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/patient': {
+      id: '/patient'
+      path: '/patient'
+      fullPath: '/patient'
+      preLoaderRoute: typeof PatientRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hospitals': {
+      id: '/hospitals'
+      path: '/hospitals'
+      fullPath: '/hospitals'
+      preLoaderRoute: typeof HospitalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doctors-search': {
+      id: '/doctors-search'
+      path: '/doctors-search'
+      fullPath: '/doctors-search'
+      preLoaderRoute: typeof DoctorsSearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doctor': {
+      id: '/doctor'
+      path: '/doctor'
+      fullPath: '/doctor'
+      preLoaderRoute: typeof DoctorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -87,6 +197,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  DoctorRoute: DoctorRoute,
+  DoctorsSearchRoute: DoctorsSearchRoute,
+  HospitalsRoute: HospitalsRoute,
+  PatientRoute: PatientRoute,
   PortalsRoute: PortalsRoute,
   AuthPortalRoute: AuthPortalRoute,
 }
