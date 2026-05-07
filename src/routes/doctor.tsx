@@ -7,8 +7,15 @@ import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/context/auth-context";
+import { ProtectedRoute } from "@/components/protected-route";
 
-export const Route = createFileRoute("/doctor")({ component: DoctorDashboard });
+export const Route = createFileRoute("/doctor")({
+  component: () => (
+    <ProtectedRoute allow={["doctor"]}>
+      <DoctorDashboard />
+    </ProtectedRoute>
+  ),
+});
 
 function DoctorDashboard() {
   const { t } = useTranslation();

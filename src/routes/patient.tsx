@@ -46,23 +46,20 @@ function PatientDashboard() {
           <Skeleton className="h-40" />
         ) : (
           <Card className="overflow-hidden p-0 shadow-elevated">
-            <div className="flex flex-col gap-6 bg-gradient-hero p-6 text-primary-foreground sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-6 bg-gradient-hero p-6 text-primary-foreground sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <p className="text-sm text-primary-foreground/80">{t("dashboard.welcome", { name: profile?.full_name || "Patient" })}</p>
                 <h1 className="mt-1 text-2xl font-bold">{profile?.full_name}</h1>
-                <div className="mt-3 inline-flex items-center gap-2 rounded-md bg-card/15 px-3 py-1.5 backdrop-blur">
-                  <IdCard className="h-4 w-4" />
-                  <span className="font-mono text-sm">{patient?.patient_code ?? "—"}</span>
-                </div>
-                {patient?.aadhaar_last4 && (
-                  <div className="mt-2 text-xs text-primary-foreground/80">Aadhaar: XXXX-XXXX-{patient.aadhaar_last4}</div>
+                {patient?.patient_code && (
+                  <div className="mt-4">
+                    <PatientIdCard
+                      patientCode={patient.patient_code}
+                      fullName={profile?.full_name ?? ""}
+                      aadhaarLast4={patient.aadhaar_last4}
+                    />
+                  </div>
                 )}
               </div>
-              {patient?.patient_code && (
-                <div className="rounded-lg bg-card p-3">
-                  <QRCode value={patient.patient_code} size={96} />
-                </div>
-              )}
             </div>
           </Card>
         )}
