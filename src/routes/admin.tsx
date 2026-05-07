@@ -3,8 +3,15 @@ import { useTranslation } from "react-i18next";
 import { Users, IndianRupee, Bed, AlertCircle } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { Card } from "@/components/ui/card";
+import { ProtectedRoute } from "@/components/protected-route";
 
-export const Route = createFileRoute("/admin")({ component: AdminDashboard });
+export const Route = createFileRoute("/admin")({
+  component: () => (
+    <ProtectedRoute allow={["admin"]}>
+      <AdminDashboard />
+    </ProtectedRoute>
+  ),
+});
 
 function AdminDashboard() {
   const { t } = useTranslation();
