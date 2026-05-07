@@ -1,0 +1,19 @@
+import type { Translations } from "./en";
+
+const bn: Translations = {
+  brand: { name: "হেলথফ্লো", tagline: "ভারতের জন্য সহজ স্বাস্থ্যসেবা" },
+  nav: { home: "হোম", hospitals: "হাসপাতাল", doctors: "ডাক্তার", about: "আমাদের সম্পর্কে", login: "লগইন", register: "নিবন্ধন", logout: "লগআউট", dashboard: "ড্যাশবোর্ড" },
+  hero: { title: "সঠিক চিকিৎসা, দ্রুত।", subtitle: "ভারতজুড়ে হাসপাতাল ও ডাক্তার খুঁজুন। অ্যাপয়েন্টমেন্ট ও রেকর্ড এক জায়গায়।", ctaPrimary: "হাসপাতাল খুঁজুন", ctaSecondary: "ডাক্তার খুঁজুন", statsHospitals: "অংশীদার হাসপাতাল", statsDoctors: "যাচাইকৃত ডাক্তার", statsPatients: "সেবা পাওয়া রোগী" },
+  search: { placeholder: "হাসপাতাল, ডাক্তার খুঁজুন…", button: "খুঁজুন" },
+  features: { title: "যা যা প্রয়োজন, এক অ্যাপে", f1Title: "যাচাইকৃত হাসপাতাল", f1Desc: "সরকারি, বেসরকারি ও ট্রাস্ট হাসপাতাল।", f2Title: "বহুভাষিক সেবা", f2Desc: "7টি ভারতীয় ভাষায়।", f3Title: "সুরক্ষিত রেকর্ড", f3Desc: "OTP লগইন সহ এন্ড-টু-এন্ড সুরক্ষিত।", f4Title: "রিয়েল-টাইম আপডেট", f4Desc: "লাইভ OPD সারি ও অবস্থা।" },
+  portals: { title: "আপনার পোর্টাল বাছুন", subtitle: "তিনটি নিরাপদ লগইন, একটি প্ল্যাটফর্ম।", patient: "রোগী", patientDesc: "অ্যাপয়েন্টমেন্ট, রেকর্ড, চিকিৎসা।", doctor: "ডাক্তার", doctorDesc: "OPD, প্রেসক্রিপশন।", admin: "হাসপাতাল অ্যাডমিন", adminDesc: "বিশ্লেষণ, বেড, ফার্মেসি।", enter: "পোর্টালে যান" },
+  auth: { loginTitle: "{{portal}} পোর্টালে সাইন ইন করুন", registerTitle: "{{portal}} অ্যাকাউন্ট তৈরি করুন", email: "ইমেইল", password: "পাসওয়ার্ড", fullName: "পুরো নাম", phone: "মোবাইল নম্বর", sendOtp: "ইমেইলে OTP পাঠান", otp: "6-অঙ্কের OTP", verifyOtp: "যাচাই করুন", or: "অথবা", continueGoogle: "Google দিয়ে চালিয়ে যান", haveAccount: "অ্যাকাউন্ট আছে?", noAccount: "অ্যাকাউন্ট নেই?", signIn: "সাইন ইন", signUp: "সাইন আপ", submit: "চালিয়ে যান", step1: "ধাপ 1: তথ্য", step2: "ধাপ 2: OTP যাচাই", otpSentTo: "{{email}} এ OTP পাঠানো হয়েছে", resendOtp: "OTP পুনরায় পাঠান", backToCredentials: "ফিরে যান", secureNotice: "2-ধাপ যাচাইকরণ দ্বারা সুরক্ষিত" },
+  patientReg: { dob: "জন্ম তারিখ", gender: "লিঙ্গ", male: "পুরুষ", female: "মহিলা", other: "অন্য", bloodGroup: "রক্তের গ্রুপ", aadhaar: "আধার নম্বর (12 অঙ্ক)", aadhaarNote: "এনক্রিপ্টেড সংরক্ষিত, শুধু শেষ 4 দৃশ্যমান।", state: "রাজ্য", district: "জেলা", city: "শহর", pincode: "পিনকোড", emergencyName: "জরুরি যোগাযোগের নাম", emergencyPhone: "জরুরি যোগাযোগের ফোন" },
+  doctorReg: { specialization: "বিশেষজ্ঞতা", qualification: "যোগ্যতা (MBBS, MD…)", council: "মেডিকেল কাউন্সিল রেজি. নম্বর", experience: "বছরের অভিজ্ঞতা", fee: "পরামর্শ ফি (₹)", languages: "বলা ভাষা (কমা দিয়ে)" },
+  dashboard: { welcome: "ফিরে আসায় স্বাগতম, {{name}}", yourId: "আপনার ID", quickActions: "দ্রুত পদক্ষেপ", bookAppt: "অ্যাপয়েন্টমেন্ট বুক", viewRecords: "রেকর্ড দেখুন", payBills: "বিল পরিশোধ", download: "ID কার্ড ডাউনলোড", upcoming: "আসন্ন", none: "কিছুই নির্ধারিত নেই", todayOpd: "আজকের OPD", activePatients: "সক্রিয় রোগী", pendingReports: "অমীমাংসিত রিপোর্ট", totalPatients: "মোট রোগী", todayRevenue: "আজকের রাজস্ব", bedsAvailable: "উপলব্ধ বেড" },
+  common: { loading: "লোড হচ্ছে…", save: "সংরক্ষণ", cancel: "বাতিল", next: "পরবর্তী", back: "পেছনে", error: "কিছু ভুল হয়েছে", success: "সম্পন্ন", requiredField: "এটি প্রয়োজন", invalidEmail: "বৈধ ইমেইল লিখুন", invalidOtp: "6-অঙ্কের কোড লিখুন" },
+  hospitals: { title: "কাছাকাছি হাসপাতাল খুঁজুন", subtitle: "বিশেষজ্ঞতা, সুবিধা, বীমা দিয়ে ফিল্টার।", type: "ধরণ", speciality: "বিশেষজ্ঞতা", insurance: "বীমা", facilities: "সুবিধা", all: "সব", viewDetails: "বিবরণ দেখুন", beds: "বেড", icu: "ICU", nicu: "NICU", rating: "রেটিং" },
+  doctors: { title: "ডাক্তার খুঁজুন", subtitle: "নাম, বিশেষজ্ঞতা বা শহর দিয়ে।", yearsExp: "বছর অভিজ্ঞতা", bookAppt: "অ্যাপয়েন্টমেন্ট" },
+  footer: { tagline: "ভারতের প্রতিটি কোণে স্বাস্থ্যসেবা।", company: "কোম্পানি", legal: "আইনি", contact: "যোগাযোগ", rights: "© {{year}} হেলথফ্লো। সর্বস্বত্ব সংরক্ষিত।" },
+};
+export default bn;
