@@ -1,0 +1,19 @@
+import type { Translations } from "./en";
+
+const kn: Translations = {
+  brand: { name: "ಹೆಲ್ತ್‌ಫ್ಲೋ", tagline: "ಭಾರತಕ್ಕಾಗಿ ಸುಲಭ ಆರೋಗ್ಯ ಸೇವೆ" },
+  nav: { home: "ಮುಖಪುಟ", hospitals: "ಆಸ್ಪತ್ರೆಗಳು", doctors: "ವೈದ್ಯರು", about: "ನಮ್ಮ ಬಗ್ಗೆ", login: "ಲಾಗಿನ್", register: "ನೋಂದಣಿ", logout: "ಲಾಗ್‌ಔಟ್", dashboard: "ಡ್ಯಾಶ್‌ಬೋರ್ಡ್" },
+  hero: { title: "ಸರಿಯಾದ ಚಿಕಿತ್ಸೆ, ವೇಗವಾಗಿ.", subtitle: "ಭಾರತದಾದ್ಯಂತ ಆಸ್ಪತ್ರೆಗಳು, ವೈದ್ಯರನ್ನು ಹುಡುಕಿ. ಎಲ್ಲವನ್ನೂ ಒಂದೇ ಕಡೆ.", ctaPrimary: "ಆಸ್ಪತ್ರೆ ಹುಡುಕಿ", ctaSecondary: "ವೈದ್ಯರನ್ನು ಹುಡುಕಿ", statsHospitals: "ಪಾಲುದಾರ ಆಸ್ಪತ್ರೆಗಳು", statsDoctors: "ಪರಿಶೀಲಿತ ವೈದ್ಯರು", statsPatients: "ಸೇವೆ ಒದಗಿಸಿದ ರೋಗಿಗಳು" },
+  search: { placeholder: "ಆಸ್ಪತ್ರೆಗಳು, ವೈದ್ಯರನ್ನು ಹುಡುಕಿ…", button: "ಹುಡುಕಿ" },
+  features: { title: "ನಿಮಗೆ ಬೇಕಾದ ಎಲ್ಲವೂ, ಒಂದೇ ಆ್ಯಪ್‌ನಲ್ಲಿ", f1Title: "ಪರಿಶೀಲಿತ ಆಸ್ಪತ್ರೆಗಳು", f1Desc: "ಸರ್ಕಾರಿ, ಖಾಸಗಿ ಮತ್ತು ಟ್ರಸ್ಟ್.", f2Title: "ಬಹುಭಾಷಾ ಸೇವೆ", f2Desc: "7 ಭಾರತೀಯ ಭಾಷೆಗಳಲ್ಲಿ.", f3Title: "ಸುರಕ್ಷಿತ ದಾಖಲೆಗಳು", f3Desc: "OTP ಲಾಗಿನ್‌ನೊಂದಿಗೆ ರಕ್ಷಿತ.", f4Title: "ರಿಯಲ್-ಟೈಮ್ ನವೀಕರಣಗಳು", f4Desc: "ನೇರ OPD ಸಾಲು ಮತ್ತು ಸ್ಥಿತಿ." },
+  portals: { title: "ನಿಮ್ಮ ಪೋರ್ಟಲ್ ಆಯ್ಕೆಮಾಡಿ", subtitle: "ಮೂರು ಸುರಕ್ಷಿತ ಲಾಗಿನ್‌ಗಳು, ಒಂದು ಪ್ಲಾಟ್‌ಫಾರ್ಮ್.", patient: "ರೋಗಿ", patientDesc: "ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್‌ಗಳು, ದಾಖಲೆಗಳು.", doctor: "ವೈದ್ಯರು", doctorDesc: "OPD, ಪ್ರಿಸ್ಕ್ರಿಪ್ಷನ್‌ಗಳು.", admin: "ಆಸ್ಪತ್ರೆ ನಿರ್ವಾಹಕ", adminDesc: "ವಿಶ್ಲೇಷಣೆ, ಬೆಡ್‌ಗಳು.", enter: "ಪೋರ್ಟಲ್ ತೆರೆಯಿರಿ" },
+  auth: { loginTitle: "{{portal}} ಪೋರ್ಟಲ್‌ಗೆ ಸೈನ್ ಇನ್", registerTitle: "{{portal}} ಖಾತೆ ರಚಿಸಿ", email: "ಇಮೇಲ್", password: "ಪಾಸ್‌ವರ್ಡ್", fullName: "ಪೂರ್ಣ ಹೆಸರು", phone: "ಮೊಬೈಲ್ ಸಂಖ್ಯೆ", sendOtp: "ಇಮೇಲ್‌ಗೆ OTP ಕಳುಹಿಸಿ", otp: "6-ಅಂಕಿಯ OTP", verifyOtp: "ಪರಿಶೀಲಿಸಿ", or: "ಅಥವಾ", continueGoogle: "Google ನೊಂದಿಗೆ ಮುಂದುವರಿಯಿರಿ", haveAccount: "ಈಗಾಗಲೇ ಖಾತೆ ಇದೆಯೇ?", noAccount: "ಖಾತೆ ಇಲ್ಲವೇ?", signIn: "ಸೈನ್ ಇನ್", signUp: "ಸೈನ್ ಅಪ್", submit: "ಮುಂದುವರಿಯಿರಿ", step1: "ಹಂತ 1: ವಿವರಗಳು", step2: "ಹಂತ 2: OTP ಪರಿಶೀಲನೆ", otpSentTo: "{{email}} ಗೆ OTP ಕಳುಹಿಸಲಾಗಿದೆ", resendOtp: "OTP ಮರುಕಳುಹಿಸಿ", backToCredentials: "ಹಿಂದೆ", secureNotice: "2-ಹಂತದ ಪರಿಶೀಲನೆಯಿಂದ ರಕ್ಷಿತ" },
+  patientReg: { dob: "ಜನ್ಮ ದಿನಾಂಕ", gender: "ಲಿಂಗ", male: "ಪುರುಷ", female: "ಮಹಿಳೆ", other: "ಇತರೆ", bloodGroup: "ರಕ್ತದ ಗುಂಪು", aadhaar: "ಆಧಾರ್ ಸಂಖ್ಯೆ (12 ಅಂಕಿ)", aadhaarNote: "ಎನ್‌ಕ್ರಿಪ್ಟ್ ಆಗಿದೆ, ಕೊನೆಯ 4 ಮಾತ್ರ ಗೋಚರ.", state: "ರಾಜ್ಯ", district: "ಜಿಲ್ಲೆ", city: "ನಗರ", pincode: "ಪಿನ್‌ಕೋಡ್", emergencyName: "ತುರ್ತು ಸಂಪರ್ಕ ಹೆಸರು", emergencyPhone: "ತುರ್ತು ಸಂಪರ್ಕ ಫೋನ್" },
+  doctorReg: { specialization: "ವಿಶೇಷತೆ", qualification: "ಅರ್ಹತೆ (MBBS, MD…)", council: "ವೈದ್ಯಕೀಯ ಮಂಡಳಿ ನೋಂದಣಿ", experience: "ವರ್ಷಗಳ ಅನುಭವ", fee: "ಸಮಾಲೋಚನಾ ಶುಲ್ಕ (₹)", languages: "ಮಾತನಾಡುವ ಭಾಷೆಗಳು (ಕಾಮಾದಿಂದ)" },
+  dashboard: { welcome: "ಮತ್ತೆ ಸ್ವಾಗತ, {{name}}", yourId: "ನಿಮ್ಮ ID", quickActions: "ತ್ವರಿತ ಕ್ರಿಯೆಗಳು", bookAppt: "ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್ ಬುಕ್", viewRecords: "ದಾಖಲೆಗಳನ್ನು ನೋಡಿ", payBills: "ಬಿಲ್ ಪಾವತಿಸಿ", download: "ID ಕಾರ್ಡ್ ಡೌನ್‌ಲೋಡ್", upcoming: "ಮುಂಬರುವ", none: "ಯಾವುದೂ ನಿಗದಿಯಾಗಿಲ್ಲ", todayOpd: "ಇಂದಿನ OPD", activePatients: "ಸಕ್ರಿಯ ರೋಗಿಗಳು", pendingReports: "ಬಾಕಿ ವರದಿಗಳು", totalPatients: "ಒಟ್ಟು ರೋಗಿಗಳು", todayRevenue: "ಇಂದಿನ ಆದಾಯ", bedsAvailable: "ಲಭ್ಯ ಬೆಡ್‌ಗಳು" },
+  common: { loading: "ಲೋಡ್ ಆಗುತ್ತಿದೆ…", save: "ಉಳಿಸಿ", cancel: "ರದ್ದು", next: "ಮುಂದೆ", back: "ಹಿಂದೆ", error: "ಏನೋ ತಪ್ಪಾಗಿದೆ", success: "ಮುಗಿಯಿತು", requiredField: "ಇದು ಅಗತ್ಯ", invalidEmail: "ಮಾನ್ಯ ಇಮೇಲ್", invalidOtp: "6-ಅಂಕಿಯ ಕೋಡ್" },
+  hospitals: { title: "ಹತ್ತಿರದ ಆಸ್ಪತ್ರೆಗಳು", subtitle: "ವಿಶೇಷತೆ, ಸೌಲಭ್ಯ, ವಿಮೆಯಿಂದ ಫಿಲ್ಟರ್.", type: "ಪ್ರಕಾರ", speciality: "ವಿಶೇಷತೆ", insurance: "ವಿಮೆ", facilities: "ಸೌಲಭ್ಯಗಳು", all: "ಎಲ್ಲಾ", viewDetails: "ವಿವರಗಳು", beds: "ಬೆಡ್‌ಗಳು", icu: "ICU", nicu: "NICU", rating: "ರೇಟಿಂಗ್" },
+  doctors: { title: "ವೈದ್ಯರನ್ನು ಹುಡುಕಿ", subtitle: "ಹೆಸರು, ವಿಶೇಷತೆ ಅಥವಾ ನಗರದಿಂದ.", yearsExp: "ವ. ಅನುಭವ", bookAppt: "ಅಪಾಯಿಂಟ್‌ಮೆಂಟ್" },
+  footer: { tagline: "ಭಾರತದ ಪ್ರತಿ ಮೂಲೆಗೆ ಆರೋಗ್ಯ ಸೇವೆ.", company: "ಕಂಪನಿ", legal: "ಕಾನೂನು", contact: "ಸಂಪರ್ಕ", rights: "© {{year}} ಹೆಲ್ತ್‌ಫ್ಲೋ. ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ." },
+};
+export default kn;

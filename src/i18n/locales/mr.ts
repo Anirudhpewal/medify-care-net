@@ -1,0 +1,19 @@
+import type { Translations } from "./en";
+
+const mr: Translations = {
+  brand: { name: "हेल्थफ्लो", tagline: "भारतासाठी सोपी आरोग्यसेवा" },
+  nav: { home: "मुख्यपृष्ठ", hospitals: "रुग्णालये", doctors: "डॉक्टर", about: "आमच्याबद्दल", login: "लॉगिन", register: "नोंदणी", logout: "लॉगआउट", dashboard: "डॅशबोर्ड" },
+  hero: { title: "योग्य उपचार, जलद.", subtitle: "संपूर्ण भारतात रुग्णालये, डॉक्टर शोधा. अपॉइंटमेंट, उपचार आणि नोंदी एकाच ठिकाणी.", ctaPrimary: "रुग्णालय शोधा", ctaSecondary: "डॉक्टर शोधा", statsHospitals: "भागीदार रुग्णालये", statsDoctors: "सत्यापित डॉक्टर", statsPatients: "सेवा पुरवलेले रुग्ण" },
+  search: { placeholder: "रुग्णालये, डॉक्टर शोधा…", button: "शोधा" },
+  features: { title: "तुम्हाला हवे ते सर्व, एका अॅपमध्ये", f1Title: "सत्यापित रुग्णालये", f1Desc: "सरकारी, खाजगी आणि ट्रस्ट रुग्णालये.", f2Title: "बहुभाषिक सेवा", f2Desc: "7 भारतीय भाषांमध्ये.", f3Title: "सुरक्षित नोंदी", f3Desc: "OTP लॉगिनसह संपूर्ण संरक्षित.", f4Title: "रिअल-टाइम अपडेट्स", f4Desc: "थेट OPD रांग आणि अपॉइंटमेंट स्थिती." },
+  portals: { title: "तुमचे पोर्टल निवडा", subtitle: "तीन सुरक्षित लॉगिन, एक जोडलेले व्यासपीठ.", patient: "रुग्ण", patientDesc: "अपॉइंटमेंट, नोंदी, उपचार.", doctor: "डॉक्टर", doctorDesc: "OPD, प्रिस्क्रिप्शन्स.", admin: "रुग्णालय प्रशासक", adminDesc: "विश्लेषण, बेड, फार्मसी.", enter: "पोर्टल उघडा" },
+  auth: { loginTitle: "{{portal}} पोर्टलमध्ये साइन इन करा", registerTitle: "{{portal}} खाते तयार करा", email: "ईमेल", password: "पासवर्ड", fullName: "पूर्ण नाव", phone: "मोबाइल क्रमांक", sendOtp: "ईमेलवर OTP पाठवा", otp: "6-अंकी OTP", verifyOtp: "सत्यापित करा", or: "किंवा", continueGoogle: "Google सह सुरू ठेवा", haveAccount: "आधीच खाते आहे?", noAccount: "खाते नाही?", signIn: "साइन इन", signUp: "साइन अप", submit: "सुरू ठेवा", step1: "पायरी 1: तपशील", step2: "पायरी 2: OTP सत्यापन", otpSentTo: "{{email}} वर OTP पाठवला", resendOtp: "OTP पुन्हा पाठवा", backToCredentials: "मागे", secureNotice: "2-पायरी सत्यापनाने संरक्षित" },
+  patientReg: { dob: "जन्मतारीख", gender: "लिंग", male: "पुरुष", female: "महिला", other: "इतर", bloodGroup: "रक्तगट", aadhaar: "आधार क्रमांक (12 अंक)", aadhaarNote: "एनक्रिप्टेड साठवले, फक्त शेवटचे 4 अंक दिसतील.", state: "राज्य", district: "जिल्हा", city: "शहर", pincode: "पिनकोड", emergencyName: "आपत्कालीन संपर्क नाव", emergencyPhone: "आपत्कालीन संपर्क फोन" },
+  doctorReg: { specialization: "विशेषज्ञता", qualification: "पात्रता (MBBS, MD…)", council: "वैद्यकीय परिषद नोंदणी क्रमांक", experience: "वर्षांचा अनुभव", fee: "सल्ला शुल्क (₹)", languages: "बोलल्या जाणाऱ्या भाषा (कॉमाने)" },
+  dashboard: { welcome: "पुन्हा स्वागत, {{name}}", yourId: "तुमचा ID", quickActions: "जलद क्रिया", bookAppt: "अपॉइंटमेंट बुक करा", viewRecords: "नोंदी पहा", payBills: "बिल भरा", download: "ID कार्ड डाउनलोड", upcoming: "आगामी", none: "काहीही नियोजित नाही", todayOpd: "आजचा OPD", activePatients: "सक्रिय रुग्ण", pendingReports: "प्रलंबित अहवाल", totalPatients: "एकूण रुग्ण", todayRevenue: "आजचे उत्पन्न", bedsAvailable: "उपलब्ध बेड" },
+  common: { loading: "लोड होत आहे…", save: "जतन करा", cancel: "रद्द", next: "पुढे", back: "मागे", error: "काहीतरी चूक", success: "झाले", requiredField: "हे आवश्यक", invalidEmail: "वैध ईमेल टाका", invalidOtp: "6-अंकी कोड टाका" },
+  hospitals: { title: "जवळची रुग्णालये शोधा", subtitle: "विशेषज्ञता, सुविधा, विमा यानुसार फिल्टर करा.", type: "प्रकार", speciality: "विशेषज्ञता", insurance: "विमा", facilities: "सुविधा", all: "सर्व", viewDetails: "तपशील पहा", beds: "बेड", icu: "ICU", nicu: "NICU", rating: "रेटिंग" },
+  doctors: { title: "डॉक्टर शोधा", subtitle: "नाव, विशेषज्ञता किंवा शहराने शोधा.", yearsExp: "वर्षे अनुभव", bookAppt: "अपॉइंटमेंट" },
+  footer: { tagline: "भारताच्या प्रत्येक कोपऱ्यात आरोग्यसेवा.", company: "कंपनी", legal: "कायदेशीर", contact: "संपर्क", rights: "© {{year}} हेल्थफ्लो. सर्व हक्क राखीव." },
+};
+export default mr;
