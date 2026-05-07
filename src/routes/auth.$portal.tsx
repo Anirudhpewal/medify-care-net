@@ -11,6 +11,7 @@ import { Card } from "@/components/ui/card";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/context/auth-context";
+import { audit } from "@/lib/audit";
 
 const PORTAL_VALUES = ["patient", "doctor", "admin"] as const;
 type Portal = (typeof PORTAL_VALUES)[number];
@@ -84,7 +85,10 @@ function AuthPage() {
         setStep("otp");
       } else {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
-        if (error) throw error;
+        if (error) {
+          await audit("login.failed", { userId: null, target: email, metadata: { portal, reason: error.message } });
+          throw error;
+        }
         // Send OTP for 2FA layer
         await supabase.auth.signInWithOtp({ email, options: { shouldCreateUser: false } }).catch(() => {});
         toast.success(t("auth.otpSentTo", { email }));
@@ -120,6 +124,7 @@ function AuthPage() {
           await supabase.auth.signOut();
         } else {
           await refreshRole();
+          await audit("login.success", { userId, metadata: { portal } });
           toast.success(t("common.success"));
           navigate({ to: `/${portal}` as "/patient" | "/doctor" | "/admin" });
         }
