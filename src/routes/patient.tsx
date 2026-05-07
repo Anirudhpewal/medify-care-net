@@ -1,16 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Calendar, FileText, CreditCard, Download, IdCard } from "lucide-react";
-import QRCode from "react-qr-code";
+import { Calendar, FileText, CreditCard, Download } from "lucide-react";
 import { SiteHeader } from "@/components/site-header";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/context/auth-context";
+import { ProtectedRoute } from "@/components/protected-route";
+import { PatientIdCard } from "@/components/patient-id-card";
 
-export const Route = createFileRoute("/patient")({ component: PatientDashboard });
+export const Route = createFileRoute("/patient")({
+  component: () => (
+    <ProtectedRoute allow={["patient"]}>
+      <PatientDashboard />
+    </ProtectedRoute>
+  ),
+});
 
 function PatientDashboard() {
   const { t } = useTranslation();
