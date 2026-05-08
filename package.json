@@ -1,13 +1,14 @@
+
 {
   "name": "tanstack_start_ts",
   "private": true,
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "build:dev": "vite build --mode development",
-    "preview": "vite preview",
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "build:dev": "vinxi build --mode development",
+    "preview": "vinxi preview",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
@@ -91,8 +92,6 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.56.1",
     "vite": "^7.3.1"
-    
   }
-  }
-
+}
 
