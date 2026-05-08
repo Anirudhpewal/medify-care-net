@@ -14,6 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
+      appointments: {
+        Row: {
+          created_at: string
+          doctor_id: string | null
+          hospital_id: string | null
+          id: string
+          patient_id: string
+          reason: string | null
+          scheduled_at: string
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          doctor_id?: string | null
+          hospital_id?: string | null
+          id?: string
+          patient_id: string
+          reason?: string | null
+          scheduled_at: string
+          status?: string
+        }
+        Update: {
+          created_at?: string
+          doctor_id?: string | null
+          hospital_id?: string | null
+          id?: string
+          patient_id?: string
+          reason?: string | null
+          scheduled_at?: string
+          status?: string
+        }
+        Relationships: []
+      }
       audit_logs: {
         Row: {
           action: string
@@ -213,6 +246,63 @@ export type Database = {
         }
         Relationships: []
       }
+      lab_reports: {
+        Row: {
+          created_at: string
+          id: string
+          name: string
+          patient_id: string
+          report_date: string | null
+          result: string | null
+          status: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          name: string
+          patient_id: string
+          report_date?: string | null
+          result?: string | null
+          status?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          name?: string
+          patient_id?: string
+          report_date?: string | null
+          result?: string | null
+          status?: string | null
+        }
+        Relationships: []
+      }
+      notifications: {
+        Row: {
+          body: string | null
+          created_at: string
+          id: string
+          read: boolean
+          title: string
+          user_id: string
+        }
+        Insert: {
+          body?: string | null
+          created_at?: string
+          id?: string
+          read?: boolean
+          title: string
+          user_id: string
+        }
+        Update: {
+          body?: string | null
+          created_at?: string
+          id?: string
+          read?: boolean
+          title?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       patients: {
         Row: {
           aadhaar_full: string | null
@@ -270,6 +360,69 @@ export type Database = {
         }
         Relationships: []
       }
+      payments: {
+        Row: {
+          amount: number
+          description: string | null
+          id: string
+          method: string | null
+          paid_at: string
+          patient_id: string
+        }
+        Insert: {
+          amount: number
+          description?: string | null
+          id?: string
+          method?: string | null
+          paid_at?: string
+          patient_id: string
+        }
+        Update: {
+          amount?: number
+          description?: string | null
+          id?: string
+          method?: string | null
+          paid_at?: string
+          patient_id?: string
+        }
+        Relationships: []
+      }
+      prescriptions: {
+        Row: {
+          created_at: string
+          doctor_id: string | null
+          dosage: string | null
+          frequency: string | null
+          id: string
+          instructions: string | null
+          medicine_name: string
+          patient_id: string
+          treatment_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          doctor_id?: string | null
+          dosage?: string | null
+          frequency?: string | null
+          id?: string
+          instructions?: string | null
+          medicine_name: string
+          patient_id: string
+          treatment_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          doctor_id?: string | null
+          dosage?: string | null
+          frequency?: string | null
+          id?: string
+          instructions?: string | null
+          medicine_name?: string
+          patient_id?: string
+          treatment_id?: string | null
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           created_at: string
@@ -300,6 +453,51 @@ export type Database = {
           photo_url?: string | null
           preferred_language?: string
           updated_at?: string
+        }
+        Relationships: []
+      }
+      treatments: {
+        Row: {
+          created_at: string
+          diagnosis: string
+          doctor_id: string | null
+          hospital_id: string | null
+          id: string
+          last_visit: string | null
+          next_appointment: string | null
+          notes: string | null
+          patient_id: string
+          progress: number
+          started_at: string | null
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          diagnosis: string
+          doctor_id?: string | null
+          hospital_id?: string | null
+          id?: string
+          last_visit?: string | null
+          next_appointment?: string | null
+          notes?: string | null
+          patient_id: string
+          progress?: number
+          started_at?: string | null
+          status?: string
+        }
+        Update: {
+          created_at?: string
+          diagnosis?: string
+          doctor_id?: string | null
+          hospital_id?: string | null
+          id?: string
+          last_visit?: string | null
+          next_appointment?: string | null
+          notes?: string | null
+          patient_id?: string
+          progress?: number
+          started_at?: string | null
+          status?: string
         }
         Relationships: []
       }

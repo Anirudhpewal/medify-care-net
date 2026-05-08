@@ -12,6 +12,7 @@ import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/context/auth-context";
 import { audit } from "@/lib/audit";
+import { DEMO_CREDENTIALS, isDemoEmail } from "@/lib/demo-credentials";
 
 const PORTAL_VALUES = ["patient", "doctor", "admin"] as const;
 type Portal = (typeof PORTAL_VALUES)[number];
@@ -22,6 +23,7 @@ export const Route = createFileRoute("/auth/$portal")({
     if (!PORTAL_VALUES.includes(p)) throw new Error("Invalid portal");
     return { portal: p };
   },
+  validateSearch: (s: Record<string, unknown>) => ({ demo: s.demo === "1" ? "1" : undefined }),
   component: AuthPage,
 });
 
@@ -54,11 +56,24 @@ function AuthPage() {
   const [qualification, setQualification] = useState("");
   const [council, setCouncil] = useState("");
 
+  const search = Route.useSearch();
   useEffect(() => {
     if (user && role) {
       navigate({ to: `/${role}` as "/patient" | "/doctor" | "/admin" });
     }
   }, [user, role, navigate]);
+
+  // Auto-fill credentials when arriving via Quick Login
+  useEffect(() => {
+    if (search.demo === "1") {
+      const c = DEMO_CREDENTIALS.find((d) => d.role === portal);
+      if (c) {
+        setEmail(c.email);
+        setPassword(c.password);
+        setMode("signin");
+      }
+    }
+  }, [search.demo, portal]);
 
   const portalLabel = t(`portals.${portal}`);
 
@@ -88,6 +103,16 @@ function AuthPage() {
         if (error) {
           await audit("login.failed", { userId: null, target: email, metadata: { portal, reason: error.message } });
           throw error;
+        }
+        // Demo accounts skip OTP for instant access
+        if (isDemoEmail(email)) {
+          const { data: sessData } = await supabase.auth.getSession();
+          const userId = sessData.session?.user.id;
+          await refreshRole();
+          if (userId) await audit("login.success", { userId, metadata: { portal, demo: true } });
+          toast.success("Demo login successful");
+          navigate({ to: `/${portal}` as "/patient" | "/doctor" | "/admin" });
+          return;
         }
         // Send OTP for 2FA layer
         await supabase.auth.signInWithOtp({ email, options: { shouldCreateUser: false } }).catch(() => {});

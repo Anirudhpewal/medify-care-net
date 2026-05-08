@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
+import { DemoCredentialsCard } from "@/components/demo-credentials-card";
 
 export const Route = createFileRoute("/")({ component: HomePage });
 
@@ -134,6 +135,11 @@ function HomePage() {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Demo credentials */}
+        <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6">
+          <DemoCredentialsCard />
         </section>
       </main>
       <SiteFooter />
