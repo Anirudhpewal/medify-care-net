@@ -14,6 +14,7 @@ import { Route as PatientRouteImport } from './routes/patient'
 import { Route as HospitalsRouteImport } from './routes/hospitals'
 import { Route as DoctorsSearchRouteImport } from './routes/doctors-search'
 import { Route as DoctorRouteImport } from './routes/doctor'
+import { Route as DemoCredentialsRouteImport } from './routes/demo-credentials'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuthPortalRouteImport } from './routes/auth.$portal'
@@ -43,6 +44,11 @@ const DoctorRoute = DoctorRouteImport.update({
   path: '/doctor',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DemoCredentialsRoute = DemoCredentialsRouteImport.update({
+  id: '/demo-credentials',
+  path: '/demo-credentials',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
   path: '/admin',
@@ -62,6 +68,7 @@ const AuthPortalRoute = AuthPortalRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/demo-credentials': typeof DemoCredentialsRoute
   '/doctor': typeof DoctorRoute
   '/doctors-search': typeof DoctorsSearchRoute
   '/hospitals': typeof HospitalsRoute
@@ -72,6 +79,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/demo-credentials': typeof DemoCredentialsRoute
   '/doctor': typeof DoctorRoute
   '/doctors-search': typeof DoctorsSearchRoute
   '/hospitals': typeof HospitalsRoute
@@ -83,6 +91,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
+  '/demo-credentials': typeof DemoCredentialsRoute
   '/doctor': typeof DoctorRoute
   '/doctors-search': typeof DoctorsSearchRoute
   '/hospitals': typeof HospitalsRoute
@@ -95,6 +104,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/admin'
+    | '/demo-credentials'
     | '/doctor'
     | '/doctors-search'
     | '/hospitals'
@@ -105,6 +115,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/admin'
+    | '/demo-credentials'
     | '/doctor'
     | '/doctors-search'
     | '/hospitals'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/admin'
+    | '/demo-credentials'
     | '/doctor'
     | '/doctors-search'
     | '/hospitals'
@@ -126,6 +138,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
+  DemoCredentialsRoute: typeof DemoCredentialsRoute
   DoctorRoute: typeof DoctorRoute
   DoctorsSearchRoute: typeof DoctorsSearchRoute
   HospitalsRoute: typeof HospitalsRoute
@@ -171,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DoctorRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/demo-credentials': {
+      id: '/demo-credentials'
+      path: '/demo-credentials'
+      fullPath: '/demo-credentials'
+      preLoaderRoute: typeof DemoCredentialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/admin': {
       id: '/admin'
       path: '/admin'
@@ -198,6 +218,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
+  DemoCredentialsRoute: DemoCredentialsRoute,
   DoctorRoute: DoctorRoute,
   DoctorsSearchRoute: DoctorsSearchRoute,
   HospitalsRoute: HospitalsRoute,
@@ -208,3 +229,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
